@@ -6,7 +6,7 @@
 #    By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/02 15:48:59 by oelbouha          #+#    #+#              #
-#    Updated: 2023/06/16 21:42:30 by oelbouha         ###   ########.fr        #
+#    Updated: 2023/06/17 16:35:30 by oelbouha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC := c++
 
 FLAGS := -std=c++98  -Wall -Wextra -Werror
 
-SRC := HumanA.cpp main.cpp   HumanB.cpp Weapon.cpp
+SRC := Harl.cpp main.cpp
  
 OBJ := $(SRC:.cpp=.o)
 OBJ := $(addprefix obj/, $(OBJ))
