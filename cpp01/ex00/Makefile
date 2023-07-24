@@ -6,11 +6,11 @@
 #    By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/02 15:48:59 by oelbouha          #+#    #+#              #
-#    Updated: 2023/06/16 15:20:15 by oelbouha         ###   ########.fr        #
+#    Updated: 2023/07/16 21:05:17 by oelbouha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := megaphone
+NAME := zombie
 
 CC := c++
 

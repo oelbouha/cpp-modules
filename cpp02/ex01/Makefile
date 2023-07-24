@@ -6,15 +6,14 @@
 #    By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/02 15:48:59 by oelbouha          #+#    #+#              #
-#    Updated: 2023/07/24 10:48:04 by oelbouha         ###   ########.fr        #
+#    Updated: 2023/07/19 10:48:09 by oelbouha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := main
-
+NAME := fixed
 CC := c++
 FLAGS := -std=c++98  -Wall -Wextra -Werror
-SRC := main.cpp
+SRC := Fixed.cpp main.cpp
  
 OBJ := $(SRC:.cpp=.o)
 OBJ := $(addprefix obj/, $(OBJ))

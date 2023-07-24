@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 11:48:42 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/22 22:48:29 by oelbouha         ###   ########.fr       */
+/*   Created: 2023/06/16 21:19:00 by oelbouha          #+#    #+#             */
+/*   Updated: 2023/07/23 13:44:38 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <string>
 #include <iostream>
+#include <cmath>
 
-class	Zombie
+using std::cout;
+using std::endl;
+
+class	Fixed
 {
 	private:
-	std::string name;
+	int					value;
+	static const	int	fract_bits = 8;
 
 	public:
-	Zombie();
-	~Zombie();
-	void	announce();
-	void	set_name(std::string newname);
+	Fixed();
+	~Fixed();
+	Fixed(const int value);
+	Fixed(const float value);
+	Fixed(const Fixed& original);
+	void 	operator=(const Fixed& original);
+	float	toFloat(void) const;
+	int		toInt(void) const;
 };
 
-Zombie* zombieHorde(int N, std::string name);
+std::ostream& operator << (std::ostream& COUT, const Fixed& original);
 
 #endif

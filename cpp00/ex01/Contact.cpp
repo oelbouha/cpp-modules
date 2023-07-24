@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 11:50:47 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/06/06 15:58:32 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/07/09 12:08:52 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Contact::Contact(){
 	nickname = "";
 	phonenumber = "";
 };
+
 void	Contact::set_firstname(const std::string newname){
 	firstname = newname;
 }

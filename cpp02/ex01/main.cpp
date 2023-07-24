@@ -5,24 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/16 15:20:31 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/22 22:31:58 by oelbouha         ###   ########.fr       */
+/*   Created: 2023/06/06 12:18:48 by oelbouha          #+#    #+#             */
+/*   Updated: 2023/07/24 09:41:51 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Fixed.hpp"
 
-int main()
-{
-	std::string str = "HI THIS IS BRAIN";
-	std::string *strptr;
-	std::string& strref = str;
+int main( void ) {
 
-	strptr = &str;
-	std::cout << "memory address: str   : " << &str << std::endl;
-	std::cout << "memory address: strptr: " << strptr << std::endl;
-	std::cout << "memory address: strref: " << &strref << std::endl;
-	std::cout << "str   : " << str << std::endl;
-	std::cout << "strptr: " << *strptr << std::endl;
-	std::cout << "strref: " << strref << std::endl;
+	Fixed a;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
+
+	a = Fixed( 1234.4321f );
+	
+
+	cout << "a is " << a << endl;
+	cout << "b is " << b << endl;
+	cout << "c is " << c << endl;
+	cout << "d is " << d << endl;
+
+	cout << "a is " << a.toInt() << " as integer" << endl;
+	cout << "b is " << b.toInt() << " as integer" << endl;
+	cout << "c is " << c.toInt() << " as integer" << endl;
+	cout << "d is " << d.toInt() << " as integer" << endl;
+	return 0;
 }

@@ -6,11 +6,11 @@
 #    By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/02 15:48:59 by oelbouha          #+#    #+#              #
-#    Updated: 2023/06/17 16:35:30 by oelbouha         ###   ########.fr        #
+#    Updated: 2023/07/16 21:03:49 by oelbouha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := phonebook
+NAME := Harl
 
 CC := c++
 

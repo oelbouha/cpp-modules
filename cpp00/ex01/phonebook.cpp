@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 15:37:31 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/06/06 22:04:04 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/07/18 22:22:36 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void	PhoneBook::add_contact(const Contact& newcontact)
 	int				arr_size;
 	static int		len;
 
-	arr_size = 2;
-	if (index < 2){
+	arr_size = 8;
+	if (index < 8){
 		contact[index] = newcontact;
 		index++;
 	}

@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 11:50:47 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/22 22:49:05 by oelbouha         ###   ########.fr       */
+/*   Created: 2023/06/06 12:18:48 by oelbouha          #+#    #+#             */
+/*   Updated: 2023/07/24 10:22:38 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-Zombie::Zombie()
+int main()
 {
-	name = "";
-}
+	Harl obj;
 
-Zombie::~Zombie()
-{
-	std::cout << name << ": destroyed..." << std::endl;
+	obj.complain("erdsdsror");
+	return 0;
 }
-
-void	Zombie::set_name(std::string new_name)
-{
-	name = new_name;
-}
-
-void	Zombie::announce(void)
-{
-	std::cout << name <<": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-

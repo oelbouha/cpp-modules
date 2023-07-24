@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 11:50:47 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/22 22:49:05 by oelbouha         ###   ########.fr       */
+/*   Created: 2023/06/16 21:19:00 by oelbouha          #+#    #+#             */
+/*   Updated: 2023/07/22 10:51:35 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-Zombie::Zombie()
+#include <string>
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+class	Fixed
 {
-	name = "";
-}
+	private:
+	int					fixed_point_value;
+	static const	int	fract_bits;
 
-Zombie::~Zombie()
-{
-	std::cout << name << ": destroyed..." << std::endl;
-}
+	public:
+	Fixed();
+	void	operator=(const Fixed& original);
+	Fixed(const Fixed& original);
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
+	~Fixed();
+};
 
-void	Zombie::set_name(std::string new_name)
-{
-	name = new_name;
-}
-
-void	Zombie::announce(void)
-{
-	std::cout << name <<": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
+#endif

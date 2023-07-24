@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 21:19:00 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/06/17 16:35:14 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/07/24 10:00:26 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	Harl
 	void error( void );
 
 	public:
-	void complain( std::string level );
+	void complain(std::string level);
 };
 
 #endif
