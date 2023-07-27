@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 21:27:09 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/24 09:40:34 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/07/26 14:26:34 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ Fixed::Fixed(const int nb)
 
 void Fixed::operator=(const Fixed& original)
 {
+	if (this == &original)
+		return ;
 	cout << "Copy assignment operator called" << endl;
 	value = original.value;
 }

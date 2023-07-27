@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 12:18:48 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/06/07 14:30:19 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/07/26 14:52:33 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,36 +17,35 @@ int main()
 {
 	PhoneBook	book;
 	Contact		contact;
-	char		input[20];
+	std::string	input;
 
 	while (1)
 	{
 		std::cout<<": ";
-		std::cin>>input;
-		if (strcmp(input, "ADD") == 0)
+		std::getline(std::cin, input);
+		if (input == "ADD")
 		{
 			std::cout<<"what is your first name: ";
-			std::cin>>input;
+			std::getline(std::cin, input);
 			contact.set_firstname(input);
 			std::cout<<"what is your last name: ";
-			std::cin>>input;
+			std::getline(std::cin, input);
 			contact.set_lastname(input);
 			std::cout<<"what is your darkest secret: ";
-			std::cin>>input;
+			std::getline(std::cin, input);
 			contact.set_secret(input);
 			std::cout<<"what is your phone number: ";
-			std::cin>>input;
+			std::getline(std::cin, input);
 			contact.set_phonenumber(input);
 			std::cout<<"what is your nickname: ";
-			std::cin>>input;
+			std::getline(std::cin, input);
 			contact.set_nickname(input);
 			book.add_contact(contact);
 		}
-		else if (strcmp(input, "EXIT") == 0)
+		else if (input == "EXIT")
 			return (0);
-		else if (strcmp(input, "SEARCH") == 0){
+		else if (input == "SEARCH")
 			book.display();
-		}
 	}
 	return (0);
 }

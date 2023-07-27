@@ -1,20 +1,28 @@
 
 
 #include <iostream>
-using namespace std;
- 
-class A {
-    int *p;
+
+class MyClass {
+private:
+    int value;
 
 public:
-    A(int w)
-    {
-        *p = w;
-        cout << *p;
+
+    MyClass(int val) : value(val) {}
+
+    MyClass& operator++(){
+        ++value;
+        return *this;
+    }
+    int getvalue(void){
+        return (value);
     }
 };
-int main()
-{
-    A obj(10);
+
+int main() {
+    MyClass obj1(5);
+    MyClass obj2 = ++obj1;
+
+    std::cout << obj2.getvalue();
     return 0;
 }
