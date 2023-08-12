@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 21:19:00 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/22 12:59:03 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/06 09:53:26 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,10 @@ class	HumanB
 {
 	private:
 	std::string name;
-	Weapon*	weapon;
+	Weapon*		weapon;
 
 	public:
 	HumanB(const std::string& name);
-
 	void	setWeapon(Weapon& newWeapon);
 	void	attack();
 };

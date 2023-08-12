@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 20:10:33 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/22 23:35:13 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/02 10:00:05 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iomanip>
 #include "Contact.hpp"
+# define NLINE "\n"
 
 class PhoneBook
 {

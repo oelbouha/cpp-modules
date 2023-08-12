@@ -6,19 +6,11 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 11:50:47 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/09 12:08:52 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/07/31 23:47:19 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-
-Contact::Contact(){
-	firstname = "";
-	lastname = "";
-	darkest_secret = "";
-	nickname = "";
-	phonenumber = "";
-};
 
 void	Contact::set_firstname(const std::string newname){
 	firstname = newname;

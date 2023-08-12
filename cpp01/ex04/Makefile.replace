@@ -1,0 +1,40 @@
+h# **************************************************************************** #
+h#                                                                              #
+h#                                                         :::      ::::::::    #
+h#    Makefile                                           :+:      :+:    :+:    #
+h#                                                     +:+ +:+         +:+      #
+h#    By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+         #
+h#                                                 +#+#+#+#+#+   +#+            #
+h#    Created: 2023/06/02 15:48:59 by oelbouha          #+#    #+#              #
+h#    Updated: 2023/07/24 10:48:04 by oelbouha         ###   ########.fr        #
+h#                                                                              #
+h# **************************************************************************** #
+h
+hNAME := main
+h
+hCC := c++
+hFLAGS := -std=c++98  -Wall -Wextra -Werror
+hSRC := main.cpp
+h 
+hOBJ := $(SRC:.cpp=.o)
+hOBJ := $(addprefix obj/, $(OBJ))
+h
+hall : $(NAME)
+h
+hobj/%.o:%.cpp
+h	@mkdir -p obj
+h	@$(CC) $(FLAGS) -c $< -o $@
+h
+h$(NAME) : $(OBJ)
+h	@$(CC) $(FLAGS) -o $@ $^
+h
+hclean :
+h	@rm -rf $(OBJ)
+h
+hfclean : clean
+h	@rm -rf $(NAME)
+h	@rm -rf obj
+h
+hre : fclean all
+h
+h.phony: re all fclean clean

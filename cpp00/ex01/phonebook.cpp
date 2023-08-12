@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 15:37:31 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/27 14:31:08 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/09 10:20:05 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	printChar(char c, int len, bool newline, bool pipe)
 	if (pipe)
 		std::cout << "|";
 	if (newline)
-		std::cout << std::endl;
+		std::cout << NLINE;
 }
 
 int	get_index()
@@ -44,10 +44,10 @@ int	get_index()
 			if (num >= 0)
 				break ;
 			else
-				std::cout<<"enter positive number"<<std::endl;
+				std::cout<<"enter positive number"<< NLINE;
 		}
 		catch(std::invalid_argument& e){
-			std::cout<<"enter a valid number"<<std::endl;
+			std::cout<<"enter a valid number"<< NLINE;
 		};
 	}
 	return (num);
@@ -74,8 +74,8 @@ void	display_contact_info(std::string input)
 	j = -1;
 	if (input.length() < 10)
 	{
-		std::cout<< input;
-		printChar(' ', 10 - input.length(), false, true);
+		printChar(' ', 10 - input.length(), false, false);
+		std::cout<< input << "|";
 		return ;
 	}
 	while (++j <= 10 && input[j])
@@ -94,7 +94,7 @@ void	PhoneBook::add_contact(const Contact& newcontact)
 	int				arr_size;
 	static int		len;
 
-	arr_size = 2;
+	arr_size = 8;
 	if (index < arr_size)
 	{
 		contact[index] = newcontact;
@@ -102,13 +102,8 @@ void	PhoneBook::add_contact(const Contact& newcontact)
 	}
 	else
 	{
-		if (len == 0)
-			contact[0] = newcontact;
-		else
-			contact[len] = newcontact;
+		contact[len % arr_size] = newcontact;
 		len++;
-		if (len >= arr_size)
-			len = 0;
 	}
 }
 
@@ -119,7 +114,7 @@ void	PhoneBook::display()
 
 	if (index == 0)
 	{
-		std::cout<< "contact list is empty"<< std::endl;
+		std::cout<< "contact list is empty"<< NLINE;
 		return ;
 	}
 	display_contact_header_info();
@@ -130,19 +125,19 @@ void	PhoneBook::display()
 		display_contact_info(contact[i].get_firstname());
 		display_contact_info(contact[i].get_lastname());
 		display_contact_info(contact[i].get_nickname());
-		std::cout << std::endl;
+		std::cout << NLINE;
 	}
 	num = get_index();
 	if (num > index)
 	{
-		std::cout<< "index is big than array size"<< std::endl;
+		std::cout<< "index is big than array size"<< NLINE;
 		return ;
 	}
-	std::cout<< "index: "<< num<< std::endl;
-	std::cout<< "first name: "<< contact[num].get_firstname()<< std::endl;
-	std::cout<< "last name: "<< contact[num].get_lastname()<< std::endl;
-	std::cout<< "nickname: "<< contact[num].get_nickname()<< std::endl;
-	std::cout<< "phone number: "<< contact[num].get_phonenumber()<< std::endl;
-	std::cout<< "darkest secret: "<< contact[num].get_secret()<< std::endl;
+	std::cout<< "index: "<< num<< NLINE;
+	std::cout<< "first name: "<< contact[num].get_firstname()<< NLINE;
+	std::cout<< "last name: "<< contact[num].get_lastname()<< NLINE;
+	std::cout<< "nickname: "<< contact[num].get_nickname()<< NLINE;
+	std::cout<< "phone number: "<< contact[num].get_phonenumber()<< NLINE;
+	std::cout<< "darkest secret: "<< contact[num].get_secret()<< NLINE;
 }
 

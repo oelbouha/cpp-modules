@@ -6,16 +6,14 @@
 #    By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/02 15:48:59 by oelbouha          #+#    #+#              #
-#    Updated: 2023/07/16 21:04:28 by oelbouha         ###   ########.fr        #
+#    Updated: 2023/08/03 22:06:20 by oelbouha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := Human
 
 CC := c++
-
 FLAGS := -std=c++98  -Wall -Wextra -Werror
-
 SRC := HumanA.cpp main.cpp   HumanB.cpp Weapon.cpp
  
 OBJ := $(SRC:.cpp=.o)

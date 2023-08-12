@@ -6,63 +6,61 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 21:27:09 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/26 13:16:55 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/12 21:35:56 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-int Fixed::getRawBits(void) const
-{
-	std::cout << "getRawBits member function called" << std::endl;
-	return (value);
-}
-
-void Fixed::setRawBits(int const raw)
-{
-	std::cout << "setRawBits member function called" << std::endl;
-	value = raw;
-}
 
 Fixed::Fixed()
 {
 	value = 0;
 }
 
-Fixed::Fixed(const int nb)
+Fixed::Fixed(const Fixed& copy)
 {
-	value = nb * (2 << fract_bits);
+	*this = copy;
 }
 
-void Fixed::operator=(const Fixed& copy)
+Fixed&	Fixed::operator=(const Fixed& copy)
 {
-	if (*this != copy){
-		value = copy.value;
+	if (this != &copy)
+	{
+		value = copy.getRawBits();
 	}
+	return (*this);
+}
+
+Fixed::~Fixed(){}
+
+int Fixed::getRawBits(void) const
+{
+	return (value);
+}
+
+void Fixed::setRawBits(int const raw)
+{
+	value = raw;
+}
+
+Fixed::Fixed(const int nb)
+{
+	value = nb << fract_bits;
 }
 
 Fixed::Fixed(const float nb)
 {
-	value = roundf(nb * (2 << fract_bits));
-}
-
-Fixed::~Fixed(){
-	// std::cout << "Destructor called" << std::endl;
-}
-
-Fixed::Fixed(const Fixed& original)
-{
-	*this = original;
+	value = roundf(nb * (1 << fract_bits));
 }
 
 float Fixed::toFloat(void) const
 {
-	return (static_cast<float>(value) / (2 << fract_bits));
+	return ((float)value / (1 << fract_bits));
 }
 
 int Fixed::toInt(void) const
 {
-	return (value / (2 << fract_bits));
+	return (value >> fract_bits);
 }
 
 std::ostream& operator<<(std::ostream& COUT, const Fixed& original)
@@ -111,7 +109,7 @@ Fixed	Fixed::operator-(const Fixed& fixed)
 
 Fixed	Fixed::operator*(const Fixed& fixed)
 {
-	return Fixed(this->toFloat() * fixed.toFloat());
+	return (this->toFloat() * fixed.toFloat());
 }
 
 Fixed	Fixed::operator/(const Fixed& fixed)
@@ -173,12 +171,21 @@ Fixed&	Fixed::operator++()
 	return (*this);
 }
 
-Fixed	Fixed::operator++(int nb)
+Fixed	Fixed::operator++(int)
 {
 	Fixed temp;
-
+	
 	temp = *this;
-	value += nb;
-	return (*this);
+	++value;
+	return (temp);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed temp;
+	
+	temp = *this;
+	--value;
+	return (temp);
 }
 

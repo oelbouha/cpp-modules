@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 11:48:42 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/12 12:17:09 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/07/31 23:48:51 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ class	Contact
 	std::string phonenumber;
 
 	public:
-	Contact();
-
 	void	set_firstname(const std::string newname);
 	void	set_lastname(const std::string newlastname);
 	void	set_nickname(const std::string newnickname);

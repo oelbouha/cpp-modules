@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 15:37:31 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/06/16 15:44:21 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/03 21:55:37 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 Zombie::Zombie()
 {
-	name = "";
+	name = "default";
 }
+
 Zombie::~Zombie()
 {
-	std::cout<< name<<": destroyed..."<< std::endl;
+	std::cout<< name <<": destroyed..."<< std::endl;
 }
 
 void	Zombie::set_name(std::string new_name)

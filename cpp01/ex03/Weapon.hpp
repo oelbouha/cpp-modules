@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 11:48:42 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/06/17 12:03:30 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/10 15:35:09 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class	Weapon
 
 	public:
 	Weapon(const std::string& _type);
-
 	const	std::string& getType()const;
 	void	setType(const std::string& newtype);
 };

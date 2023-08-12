@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 15:02:14 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/06/16 15:42:58 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/03 21:56:03 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ class Zombie
 	void	set_name(std::string new_name);
 };
 
-Zombie* newZombie( std::string name );
-void	randomChump( std::string name );
-
+Zombie* newZombie(std::string name);
+void	randomChump(std::string name);
 
 #endif

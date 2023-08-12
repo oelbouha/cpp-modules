@@ -6,16 +6,14 @@
 #    By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/02 15:48:59 by oelbouha          #+#    #+#              #
-#    Updated: 2023/07/24 10:01:30 by oelbouha         ###   ########.fr        #
+#    Updated: 2023/08/06 10:45:59 by oelbouha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := harlFilter
 
 CC := c++
-
 FLAGS := -std=c++98  -Wall -Wextra -Werror
-
 SRC := Harl.cpp main.cpp
  
 OBJ := $(SRC:.cpp=.o)

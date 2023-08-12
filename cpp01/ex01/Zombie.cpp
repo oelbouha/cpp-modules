@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 11:50:47 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/22 22:49:05 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/03 21:59:46 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Zombie::Zombie()
 {
-	name = "";
+	name = "default";
 }
 
 Zombie::~Zombie()

@@ -6,42 +6,54 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 12:18:48 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/24 10:45:34 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/10 14:43:03 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <regex>
 #include <string>
 #include <fstream>
-#include <cstring>
-#include <string.h>
 
+void	read_and_replace(char **v)
+{
+	std::ofstream	replace_file;
+	std::ifstream	file;
+	std::string		s1;
+	std::string		filename;
+	std::string		line;
+	std::size_t		found;
+
+	
+	s1 = v[2];
+	filename = v[1];
+	replace_file.open(filename + ".replace", std::ios::out);
+	file.open(v[1]);
+	if (file.is_open())
+	{
+		while (std::getline(file, line))
+		{
+			found = line.find(s1);
+			if (found != std::string::npos)
+			{
+				line = line.erase(found, s1.length());
+				line = line.insert(found, v[3]);
+			}
+			replace_file << line << "\n";
+		}
+	}
+	else
+		std::cout << "Couldn't open file\n";
+	file.close();
+	replace_file.close();
+}
 
 int main(int c, char **v)
 {
-	std::fstream file;
-	std::ifstream myfile;
-	std::string line;
-
 	if (c != 4)
 	{
 		std::cout << "not enought arguments\n";
 		return (1);
 	}
-	std::regex pattern(v[2]);
-	file.open("file.replace", std::ios::out);
-	myfile.open(v[1]);
-	if (myfile.is_open())
-	{
-		while (myfile)
-		{
-			std::getline(myfile, line);
-			std::string output = std::regex_replace(line, pattern, v[3]);
-			file << output;
-		}
-	}
-	else
-		std::cout << "Couldn't open file\n";
+	read_and_replace(v);
 	return 0;
 }

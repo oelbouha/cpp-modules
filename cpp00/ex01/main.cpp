@@ -6,13 +6,28 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 12:18:48 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/26 14:52:33 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/02 18:48:13 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
+std::string	get_input(const std::string line)
+{
+	int			i;
+	std::string	input;
+
+	i = 0;
+	while (1)
+	{
+		std::cout<< line;
+		std::getline(std::cin, input);
+		if (input.length())
+			break ;
+	}
+	return (input);	
+}
 int main()
 {
 	PhoneBook	book;
@@ -21,25 +36,18 @@ int main()
 
 	while (1)
 	{
-		std::cout<<": ";
+		std::cout<<"ADD    : add a new contact" << NLINE;
+		std::cout<<"SEARCH : display contact list" << NLINE;
+		std::cout<<"EXIT   : exit from program" << NLINE;
+		std::cout<<"Enter:-> ";
 		std::getline(std::cin, input);
 		if (input == "ADD")
 		{
-			std::cout<<"what is your first name: ";
-			std::getline(std::cin, input);
-			contact.set_firstname(input);
-			std::cout<<"what is your last name: ";
-			std::getline(std::cin, input);
-			contact.set_lastname(input);
-			std::cout<<"what is your darkest secret: ";
-			std::getline(std::cin, input);
-			contact.set_secret(input);
-			std::cout<<"what is your phone number: ";
-			std::getline(std::cin, input);
-			contact.set_phonenumber(input);
-			std::cout<<"what is your nickname: ";
-			std::getline(std::cin, input);
-			contact.set_nickname(input);
+			contact.set_firstname(get_input("what is your first name: "));
+			contact.set_lastname(get_input("what is your last name: "));
+			contact.set_secret(get_input("what is your darkest secret: "));
+			contact.set_phonenumber(get_input("what is your phone number: "));
+			contact.set_nickname(get_input("what is your nickname: "));
 			book.add_contact(contact);
 		}
 		else if (input == "EXIT")

@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 21:19:00 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/23 13:44:38 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/12 22:02:57 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,25 @@
 #include <iostream>
 #include <cmath>
 
-using std::cout;
-using std::endl;
-
 class	Fixed
 {
 	private:
-	int					value;
+	int		value;
 	static const	int	fract_bits = 8;
 
 	public:
 	Fixed();
-	~Fixed();
+	Fixed(const Fixed& copy);
+	Fixed&	operator=(const Fixed& copy);
 	Fixed(const int value);
 	Fixed(const float value);
-	Fixed(const Fixed& original);
-	void 	operator=(const Fixed& original);
-	float	toFloat(void) const;
+	~Fixed();
 	int		toInt(void) const;
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
+	float	toFloat(void) const;
 };
 
-std::ostream& operator << (std::ostream& COUT, const Fixed& original);
+std::ostream&	operator << (std::ostream& COUT, const Fixed& original);
 
 #endif
