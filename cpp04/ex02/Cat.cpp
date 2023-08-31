@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 22:55:00 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/05 19:01:12 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/16 21:31:40 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Cat& Cat::operator=(const Cat& copy)
 	if (this != &copy)
 	{
 		type = copy.type;
+		brain = new Brain();
 	}
 	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 10:14:37 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/08 15:53:20 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/14 10:10:13 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& copy)
 }
 
 
+ScavTrap::~ScavTrap()
+{
+	std::cout << "ScavTrap destructor called" << newline;
+}
+
 ScavTrap::ScavTrap(std::string _name)
 {
 	std::cout << "ScavTrap constructor called" << newline;
@@ -48,11 +53,6 @@ ScavTrap::ScavTrap(std::string _name)
 	Hitpoints = 100;
 	Energypoints = 50;
 	Attackdamage = 20;
-}
-
-ScavTrap::~ScavTrap()
-{
-	std::cout << "ScavTrap destructor called" << newline;
 }
 
 void	ScavTrap::attack(const std::string& target)

@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 12:50:07 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/03 12:28:05 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/31 10:09:04 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 int main(void)
 {
 	FragTrap b("one");
+
 	b.attack("two");
+	b.attack("one");
+
 	return (0);
 }

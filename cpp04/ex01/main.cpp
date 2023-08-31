@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 12:50:07 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/05 19:51:53 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/29 00:13:25 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,19 @@
 
 void	init()
 {
-	Animal *arr[10];
-	for(int i = 0; i < 10; i++)
-	{
-		if (i % 2)
-			arr[i] = new Dog();
-		else
-			arr[i] = new Cat();
-	}
-	for(int i = 0; i < 10; i++)
-		delete arr[i];
+	// Animal *arr[10];
+	// for(int i = 0; i < 2; i++)
+	// {
+	// 	if (i % 2)
+	// 		arr[i] = new Dog();
+	// 	else
+	// 		arr[i] = new Cat();
+	// }
+	// for(int i = 0; i < 2; i++)
+	// 	delete arr[i];
 	const Animal* meta = new Cat();
 	const Animal* j = new Dog();
-
-	std::cout << j->getType() << " " << std::endl;
+	// meta = j;
 	j->makeSound();
 	meta->makeSound();
 	delete meta;
@@ -39,6 +38,5 @@ void	init()
 int main(void)
 {
 	init();
-	// while (1);
 	return (0);
 }

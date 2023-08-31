@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:48:48 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/05 12:44:26 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/29 00:14:28 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,6 @@ Animal::Animal()
 Animal::~Animal()
 {
 	std::cout << "Animal destructor called" << newline;
-}
-
-void	Animal::makeSound() const
-{
-	std::cout << "make a sound "<< newline;
 }
 
 std::string Animal::getType() const

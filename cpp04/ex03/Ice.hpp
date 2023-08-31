@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:57:45 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/09 22:21:23 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/24 14:43:04 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
 class Ice : public AMateria
 {
 	public:
-	Ice();
-	Ice(const Ice& other);
-	Ice&	operator=(const Ice& copy);
-	~Ice();
-	AMateria*	clone() const;
-	void		use(ICharacter& target);
+		Ice();
+		Ice(const Ice& other);
+		Ice&	operator=(const Ice& copy);
+		~Ice();
+	
+		AMateria*	clone() const;
+		void		use(ICharacter& target);
 };
 
 #endif

@@ -6,11 +6,20 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 12:49:51 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/03 12:39:32 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/14 10:09:33 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap()
+{
+	std::cout << "ClapTrap default constructor called" << newline;
+	name = "default";
+	Hitpoints = 10;
+	Energypoints = 10;
+	Attackdamage = 0;
+}
 
 ClapTrap::ClapTrap(const ClapTrap& original)
 {
@@ -31,13 +40,9 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& copy)
 	return (*this);
 }
 
-ClapTrap::ClapTrap()
+ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap default constructor called" << newline;
-	name = "default";
-	Hitpoints = 10;
-	Energypoints = 10;
-	Attackdamage = 0;
+	std::cout << "Claptrap destructor called" << newline;
 }
 
 ClapTrap::ClapTrap(std::string _name)
@@ -47,11 +52,6 @@ ClapTrap::ClapTrap(std::string _name)
 	Hitpoints = 10;
 	Energypoints = 10;
 	Attackdamage = 0;
-}
-
-ClapTrap::~ClapTrap()
-{
-	std::cout << "Claptrap destructor called" << newline;
 }
 
 void	ClapTrap::attack(const std::string& target)

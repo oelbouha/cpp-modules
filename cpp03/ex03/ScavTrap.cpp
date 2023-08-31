@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 10:14:37 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/02 10:18:17 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/31 10:14:12 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ ScavTrap::ScavTrap()
 	name = "default";
 	Hitpoints = 100;
 	Energypoints = 50;
-	Attackdamage = 20;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& original)
@@ -51,7 +50,6 @@ ScavTrap::ScavTrap(std::string _name)
 	name = _name;
 	Hitpoints = 100;
 	Energypoints = 50;
-	Attackdamage = 20;
 }
 
 

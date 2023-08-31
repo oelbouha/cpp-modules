@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:13:06 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/05 18:50:33 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/16 21:32:47 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 class	Brain
 {
 	protected:
-	std::string	ideas[100];
+		std::string	ideas[100];
 
 	public:
-	Brain();
-	Brain(const Brain& other);
-	Brain&	operator=(const Brain& original);
-	~Brain();
+		Brain();
+		Brain(const Brain& other);
+		Brain&	operator=(const Brain& original);
+		~Brain();
 };
 
 #endif

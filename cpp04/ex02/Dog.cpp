@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:58:26 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/05 19:01:24 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/16 16:23:30 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Dog& Dog::operator=(const Dog& copy)
 	if (this != &copy)
 	{
 		type = copy.type;
+		brain = new Brain();
 	}
 	return (*this);
 }

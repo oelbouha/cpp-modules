@@ -14,45 +14,35 @@
 
 Character::Character()
 {
-	// std::cout << "Character default constructor called" << newline;
 	name = "Character";
-	index = 0;
 	for(int i = 0; i < 3; i++)
 		slots[i] = NULL;
 }
 
 Character::Character(const std::string _name)
 {
-	// std::cout << "Character constructor called" << newline;
 	name = _name;
-	index = 0;
 	for(int i = 0; i < 3; i++)
 		slots[i] = NULL;
 }
 
 Character::Character(const Character& other)
 {
-	// std::cout << "Character copy constructor called" << newline;
 	*this = other;
 }
 
 Character& Character::operator=(const Character& copy)
 {
-	// std::cout << "Character copy assignment constructor called" << newline;
 	if (this != &copy)
 	{
 		name = copy.name;
 		for(int i = 0; i < 4; i++)
-			this->slots[i] = copy.slots[i];
+			*(this->slots[i]) = *(copy.slots[i]);
 	}
 	return (*this);
 }
 
-Character::~Character()
-{
-	// std::cout<< "Character destructor called" << std::endl;
-	delete tmp;
-}
+Character::~Character(){}
 
 std::string const& Character::getName() const
 {
@@ -61,24 +51,26 @@ std::string const& Character::getName() const
 
 void	Character::equip(AMateria* m)
 {
-	if (m != NULL && index < 3)
+	int i;
+
+	if (m != NULL)
 	{
-		slots[index] = m;
-		index++;
+		for(i = 0 ; i < 4 && slots[i] != NULL; i++);
+		slots[i] = m;
 	}
 }
 
 void	Character::unequip(int idx)
 {
-	if (idx > 3 || idx >= index)
+	if (idx > 3 || idx < 0)
 		return ;
-	tmp = slots[idx];
+	// tmp = slots[idx];
 	slots[idx] = NULL;
 }
 
 void	Character::use(int idx, ICharacter& target)
 {
-	if (idx > 3 || idx >= index)
+	if (idx > 3 || idx < 0)
 		return ;
 	slots[idx]->use(target);
 }

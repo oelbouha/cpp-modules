@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 12:50:07 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/07/30 19:39:48 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/27 22:36:23 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int main(void)
 {
 	ClapTrap a("one");
-	a.takeDamage(5);
 	a.takeDamage(5);
 	a.attack("two");
 	a.attack("two");

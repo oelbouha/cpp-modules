@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 21:27:09 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/12 21:35:56 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/15 13:05:23 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Fixed::Fixed(const Fixed& copy)
 	*this = copy;
 }
 
-Fixed&	Fixed::operator=(const Fixed& copy)
+Fixed	Fixed::operator=(const Fixed& copy)
 {
 	if (this != &copy)
 	{
@@ -117,12 +117,12 @@ Fixed	Fixed::operator/(const Fixed& fixed)
 	return (this->toFloat() / fixed.toFloat());
 }
 
-bool	Fixed::operator==(const Fixed& nb)
-{
-	if (this->toFloat() == nb.toFloat())
-		return (true);
-	return (false);
-}
+// bool	Fixed::operator==(const Fixed& nb)
+// {
+// 	if (this->toFloat() == nb.toFloat())
+// 		return (true);
+// 	return (false);
+// }
 
 bool	Fixed::operator>=(const Fixed& nb)
 {
@@ -188,4 +188,3 @@ Fixed	Fixed::operator--(int)
 	--value;
 	return (temp);
 }
-

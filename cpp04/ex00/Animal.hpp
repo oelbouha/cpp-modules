@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:49:33 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/05 12:01:36 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/28 22:55:59 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,16 @@
 class	Animal
 {
 	protected:
-	std::string	type;
+		std::string	type;
 
 	public:
-	Animal();
-	Animal(const Animal& other);
-	Animal&	operator=(const Animal& original);
-	virtual ~Animal();
-	virtual void	makeSound() const;
-	std::string	getType() const;
+		Animal();
+		Animal(const Animal& other);
+		Animal&	operator=(const Animal& original);
+		virtual ~Animal();
+
+		virtual void	makeSound() const;
+		std::string	getType() const;
 };
 
 #endif

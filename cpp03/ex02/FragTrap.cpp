@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 10:14:37 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/03 12:08:37 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/31 10:08:09 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,20 +53,6 @@ FragTrap::FragTrap(std::string _name)
 	Hitpoints = 100;
 	Energypoints = 100;
 	Attackdamage = 30;
-}
-
-
-void	FragTrap::attack(const std::string& target)
-{
-	if (Hitpoints <= 0 || Energypoints <= 0)
-		return ;
-	std::cout << "FragTrap " << name << " attacks "<< target << ", causing " << Attackdamage << " points of damage!" << newline;
-	if (Energypoints > 0)
-	{
-		Energypoints -= 1;
-		if (Energypoints < 0)
-			Energypoints = 0;
-	}
 }
 
 void	FragTrap::guardGate()

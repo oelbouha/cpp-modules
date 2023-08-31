@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:49:33 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/05 12:51:38 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/29 00:01:57 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,16 @@
 class	Cat : public Animal
 {
 	private:
-	Brain*	brain;
+		Brain*	brain;
 
 	public:
-	Cat();
-	Cat(const Cat& original);
-	Cat&	operator=(const Cat& original);
-	~Cat();
-	void		makeSound() const;
-	std::string getType() const;
+		Cat();
+		Cat(const Cat& original);
+		Cat&	operator=(const Cat& original);
+		~Cat();
+
+		void		makeSound() const;
+		std::string getType() const;
 };
 
 #endif

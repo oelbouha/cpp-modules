@@ -14,19 +14,16 @@
 
 Ice::Ice()
 {
-	// std::cout << "Ice default constructor called" << newline;
 	type = "ice";
 }
 
 Ice::Ice(const Ice& other)
 {
-	// std::cout << "Ice copy constructor called" << newline;
 	*this = other;
 }
 
 Ice& Ice::operator=(const Ice& copy)
 {
-	// std::cout << "Ice copy assignment constructor called" << newline;
 	if (this != &copy)
 	{
 		type = copy.type;
@@ -36,7 +33,6 @@ Ice& Ice::operator=(const Ice& copy)
 
 Ice::~Ice()
 {
-	// std::cout<< "Ice destructor called" << std::endl;
 }
 
 AMateria* Ice::clone ()const
