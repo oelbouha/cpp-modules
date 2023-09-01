@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 11:47:04 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/29 00:16:46 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/01 10:08:31 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ AMateria& AMateria::operator=(const AMateria& copy)
 	return (*this);
 }
 
-AMateria::~AMateria()
-{
-}
+AMateria::~AMateria(){}
 
 std::string const& AMateria::getType() const
 {
@@ -47,7 +45,8 @@ std::string const& AMateria::getType() const
 
 void	AMateria::use(ICharacter& target)
 {
-	(void)target;
+	std::cout << type << ": \"* heals ";
+	std::cout << target.getName() << "AMateria wounds *\"" << newline;
 }
 
 

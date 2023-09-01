@@ -31,9 +31,7 @@ Cure& Cure::operator=(const Cure& copy)
 	return (*this);
 }
 
-Cure::~Cure()
-{
-}
+Cure::~Cure(){}
 
 AMateria* Cure::clone ()const
 {

@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/29 12:50:07 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/31 23:13:55 by oelbouha         ###   ########.fr       */
+/*   Created: 2023/08/04 14:49:33 by oelbouha          #+#    #+#             */
+/*   Updated: 2023/08/31 15:03:55 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-void	init()
-{
-	int	size;
-	
-	size = 4;
-	Animal *arr[10];
-	for(int i = 0; i < size; i++)
-	{
-		if (i < size / 2)
-			arr[i] = new Dog();
-		else
-			arr[i] = new Cat();
-		std::cout << std::endl;
-	}
-	for(int i = 0; i < size; i++)
-	{
-		delete arr[i];
-		std::cout << std::endl;
-	}
-}
+#include "WrongAnimal.hpp"
 
-int main(void)
+class	WrongCat : public WrongAnimal
 {
-	init();
-	return (0);
-}
+	public:
+		WrongCat();
+		WrongCat(const WrongCat& other);
+		WrongCat&	operator=(const WrongCat& original);
+		~WrongCat();
+
+		void	makeSound() const;
+		std::string	getType() const;
+};
+
+#endif

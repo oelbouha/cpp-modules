@@ -15,14 +15,14 @@
 Character::Character()
 {
 	name = "Character";
-	for(int i = 0; i < 3; i++)
+	for(int i = 0; i < 4; i++)
 		slots[i] = NULL;
 }
 
 Character::Character(const std::string _name)
 {
 	name = _name;
-	for(int i = 0; i < 3; i++)
+	for(int i = 0; i < 4; i++)
 		slots[i] = NULL;
 }
 
@@ -64,7 +64,6 @@ void	Character::unequip(int idx)
 {
 	if (idx > 3 || idx < 0)
 		return ;
-	// tmp = slots[idx];
 	slots[idx] = NULL;
 }
 

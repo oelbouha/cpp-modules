@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:57:45 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/29 00:16:18 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/01 10:06:03 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 #include <iostream>
 #include <string>
+#include "ICharacter.hpp"
+
+#define newline "\n"
 
 class ICharacter;
-#define newline "\n"
-#include "ICharacter.hpp"
 
 class AMateria
 {
@@ -32,7 +33,7 @@ class AMateria
 		AMateria&	operator=(const AMateria& copy);
 		virtual ~AMateria();
 	
-		std::string const & getType() const;
+		std::string const& getType() const;
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
 };

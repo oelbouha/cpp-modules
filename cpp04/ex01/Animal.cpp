@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:48:48 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/05 12:44:26 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/08/31 23:06:50 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Animal::~Animal()
 
 void	Animal::makeSound() const
 {
-	std::cout << "make a sound "<< newline;
+	std::cout << "animal  make a sound "<< newline;
 }
 
 std::string Animal::getType() const
