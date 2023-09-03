@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 12:50:07 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/31 22:55:04 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/01 19:46:51 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,17 @@ void	init()
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
+	std::cout << std::endl;
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
+
+	std::cout << std::endl;
+	WrongAnimal* wrong = new WrongCat();
+	wrong->makeSound();
 }
 
 int main(void)

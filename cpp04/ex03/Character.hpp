@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:57:45 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/29 00:25:55 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/02 22:32:05 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ class Character : public ICharacter
 	protected:
 		std::string	name;
 		AMateria	*slots[4];
-		// AMateria	*tmp;
+		AMateria	*tmp[4];
+		int			index;
 
 	public:
 		Character();

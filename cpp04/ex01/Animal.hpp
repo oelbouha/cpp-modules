@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:49:33 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/29 00:01:30 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/03 13:06:53 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class	Animal
 		virtual ~Animal();
 
 		virtual void	makeSound() const;
-		std::string	getType() const;
+		std::string		getType() const;
 };
 
 #endif

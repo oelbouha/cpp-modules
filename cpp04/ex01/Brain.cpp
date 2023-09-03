@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:12:42 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/31 23:05:16 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/03 13:05:20 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ Brain& Brain::operator=(const Brain& copy)
 Brain::Brain()
 {
 	std::cout << "Brain default constructor called" << newline;
-	ideas[0] = '\0';
 }
 
 Brain::~Brain()

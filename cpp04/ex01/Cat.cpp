@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 22:55:00 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/31 22:56:43 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/01 15:23:47 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cat::Cat(const Cat& other)
 {
 	std::cout << "Cat copy constructor called" << newline;
-	this->brain = new Brain();
+	brain = new Brain();
 	*this = other;
 }
 

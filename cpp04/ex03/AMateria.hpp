@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:57:45 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/09/01 10:06:03 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/02 23:39:41 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 #include "ICharacter.hpp"
 
 #define newline "\n"
-
 class ICharacter;
 
 class AMateria

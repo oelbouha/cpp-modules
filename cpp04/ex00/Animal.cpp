@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:48:48 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/31 14:42:18 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/02 22:01:20 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Animal& Animal::operator=(const Animal& copy)
 Animal::Animal()
 {
 	std::cout << "Animal default constructor called" << newline;
-	type = "default";
+	type = "Animal";
 }
 
 Animal::~Animal()
@@ -41,7 +41,7 @@ Animal::~Animal()
 
 void	Animal::makeSound() const
 {
-	std::cout << "animal sound "<< newline;
+	std::cout << "Animal's make sound "<< newline;
 }
 
 std::string Animal::getType() const

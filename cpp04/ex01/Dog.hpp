@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:57:45 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/29 00:05:32 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/03 13:07:09 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class	Dog : public Animal
 		Dog&	operator=(const Dog& original);
 		~Dog();
 
-		void	makeSound() const;
+		void		makeSound() const;
 		std::string	getType() const;
 };
 

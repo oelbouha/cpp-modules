@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 11:47:04 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/09/01 10:08:31 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/01 20:49:43 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ AMateria& AMateria::operator=(const AMateria& copy)
 {
 	if (this != &copy)
 	{
-		type = copy.type;
+		
 	}
 	return (*this);
 }

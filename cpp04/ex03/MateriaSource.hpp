@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 23:54:21 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/20 21:56:01 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/02 23:38:24 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class MateriaSource : public IMateriaSource
 		MateriaSource(const MateriaSource& other);
 		MateriaSource&	operator=(const MateriaSource& copy);
 		~MateriaSource();
+
 		void learnMateria(AMateria*);
 		AMateria* createMateria(std::string const & type);
 };

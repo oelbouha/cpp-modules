@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:58:26 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/31 23:04:34 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/02 22:09:17 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Dog::Dog(const Dog& other)
 {
 	std::cout << "Dog copy constructor called" << newline;
-	this->brain = new Brain();
+	brain = new Brain();
 	*this = other;
 }
 
