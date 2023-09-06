@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 12:50:07 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/19 14:32:34 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/04 11:46:11 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	init()
 {
-	try {
-		
+	try
+	{
 		Bureaucrat p1(1, "othman");
-		std::cout << p1;
+		cout << p1;
 	}
-	catch (std::exception& e)
+	catch (Bureaucrat::GradeTooHighException)
 	{
 		std::cout << e.what();
 	}

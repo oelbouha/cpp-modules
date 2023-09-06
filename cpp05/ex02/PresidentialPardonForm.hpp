@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:24:33 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/23 11:34:36 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/06 11:35:47 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,18 @@
 
 #include "AForm.hpp"
 
-using std::cout;
-using std::endl;
-using std::string;
-
-
 class PresidentialPardonForm : public AForm
 {
 	private :
 		string	target;
 	public:
-		PresidentialPardonForm(string target);
 		PresidentialPardonForm();
+		PresidentialPardonForm(string target);
 		PresidentialPardonForm(const PresidentialPardonForm& other);
 		PresidentialPardonForm&	operator=(const PresidentialPardonForm& original);
 		~PresidentialPardonForm();
 		
-		void	execute(Bureaucrat const& executor);
+		void	action() const;
 };
 
 #endif

@@ -16,17 +16,19 @@
 #include <string>
 #include <iostream>
 
-#define newline "\n"
+using std::cout;
+using std::string;
+using std::endl;
 
 class	Bureaucrat
 {
 	private:
-		std::string	name;
+		string		name;
 		int			grade;
 
 	public:
 		Bureaucrat();
-		Bureaucrat(int grade, std::string name);
+		Bureaucrat(int grade, string name);
 		Bureaucrat(const Bureaucrat& other);
 		Bureaucrat&	operator=(const Bureaucrat& original);
 		~Bureaucrat();
@@ -34,19 +36,15 @@ class	Bureaucrat
 		class	GradeTooHighException : public std::exception
 		{
 			public :
-				const char* what() const throw() {
-					return  "execption too high\n";
-				}
+				const char* what() const throw();
 		};
 
 		class	GradeTooLowException : public std::exception
 		{
 			public :
-				const char* what() const throw() {
-					return  "execption too Low\n";
-				}
+				const char* what() const throw();
 		};
-		std::string getName() const;
+		string		getName() const;
 		int			getGrade() const;
 		void		incrementGrade();
 		void		decrementGrade();

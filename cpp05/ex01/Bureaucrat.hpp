@@ -15,14 +15,12 @@
 
 #include <string>
 #include <iostream>
+#include "Form.hpp"
+class 	Form;
 
 using std::string;
 using std::cout;
 using std::endl;
-
-#define newline "\n"
-#include "Form.hpp"
-class 	Form;
 
 class	Bureaucrat
 {
@@ -40,17 +38,12 @@ class	Bureaucrat
 		class	GradeTooHighException : public std::exception
 		{
 			public :
-				const char* what() const throw() {
-					return  "execption too high\n";
-				}
+				const char* what() const throw();
 		};
-
 		class	GradeTooLowException : public std::exception
 		{
 			public :
-				const char* what() const throw() {
-					return  "execption too Low\n";
-				}
+				const char* what() const throw();
 		};
 		string 		getName() const;
 		int			getGrade() const;
@@ -59,7 +52,7 @@ class	Bureaucrat
 		void		signForm(Form& form);
 };
 
-std::ostream&	operator<<(std::ostream& COUT, Bureaucrat& crat);
+std::ostream&	operator << (std::ostream& COUT, Bureaucrat& crat);
 
 #endif
 

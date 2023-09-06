@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 23:16:58 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/23 23:54:26 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/06 11:48:19 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other)
 {
-	std::cout << "Bureaucrat copy constructor called" << newline;
 	*this = other;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy)
 {
-	std::cout << "Bureaucrat copy assignment constructor called" << newline;
 	if (this != &copy)
 	{
 		name = copy.name;
@@ -31,21 +29,17 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy)
 
 Bureaucrat::Bureaucrat()
 {
-	std::cout << "Bureaucrat default constructor called" << newline;
-	name = "default";
+	name = "Beraucrat";
 	grade = 0;
 }
 
-Bureaucrat::~Bureaucrat()
-{
-	std::cout << "Bureaucrat destructor called" << newline;
-}
+Bureaucrat::~Bureaucrat(){}
 
 Bureaucrat::Bureaucrat(std::string name, int grade)
 {
 	if (grade > 150)
 		throw Bureaucrat::GradeTooHighException();
-	else if (grade < 0)
+	else if (grade < 1)
 		throw Bureaucrat::GradeTooLowException();
 	this->grade = grade;
 	this->name = name;
@@ -53,7 +47,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 
 std::ostream&	operator<<(std::ostream& COUT, Bureaucrat& crat)
 {
-	COUT << crat.getName() << ", bureaucrat grade " << crat.getGrade() << newline;
+	COUT << crat.getName() << ", bureaucrat grade " << crat.getGrade() << endl;
 	return (COUT);
 }
 
@@ -83,9 +77,18 @@ void	Bureaucrat::decrementGrade()
 
 void	Bureaucrat::signForm(Form& form)
 {
-	bool sign = form.getSign();
-	if (sign)
-		std::cout << name << " signed " << form.getName() <<  endl;
+	if (form.getSign() == true)
+		cout << name << " signed " << form.getName() <<  endl;
 	else
-		std::cout << name << " couldn’t sign " << form.getName() << "because he does not have enought grade" <<  std::endl;
+		cout << name << " couldn’t sign " << form.getName() << "because he does not have enought grade" <<  std::endl;
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return  "grade too high";
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return  "grade too low";
 }

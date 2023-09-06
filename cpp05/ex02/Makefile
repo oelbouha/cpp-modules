@@ -6,7 +6,7 @@
 #    By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/29 12:50:16 by oelbouha          #+#    #+#              #
-#    Updated: 2023/08/21 22:14:54 by oelbouha         ###   ########.fr        #
+#    Updated: 2023/09/06 11:21:42 by oelbouha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ CC := c++
 FLAGS := -std=c++98  -Wall -Wextra -Werror
 
 SRC :=	main.cpp Bureaucrat.cpp  PresidentialPardonForm.cpp \
-		AForm.cpp \
-		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp 
+		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp \
+		AForm.cpp 
  
 OBJ := $(SRC:.cpp=.o)
 OBJ := $(addprefix obj/, $(OBJ))

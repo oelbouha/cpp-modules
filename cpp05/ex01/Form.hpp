@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 14:41:33 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/24 00:04:29 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/05 00:47:19 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FORM_HPP
 
 #include "Bureaucrat.hpp"
+
 class Bureaucrat;
 
 using std::cout;
@@ -25,12 +26,12 @@ class	Form
 	private:
 		const	string	name;
 		bool			sign;
-		const	int		grade;
+		const	int		gradeToSign;
 		const	int		gradeToExecute;
 
 	public:
 		Form();
-		Form(const string _name, bool sign, const int grade, const int exec);
+		Form(const string _name, const int grade, const int exec);
 		Form(const Form& other);
 		Form&	operator=(const Form& original);
 		~Form();
@@ -38,24 +39,17 @@ class	Form
 		class	GradeTooHighException : public std::exception
 		{
 			public :
-				const char* what() const throw() {
-					return  "execption too high\n";
-				}
+				const char* what() const throw();
 		};
 		class	GradeTooLowException : public std::exception
 		{
 			public :
-				const char* what() const throw() {
-					return  "execption too Low\n";
-				}
+				const char* what() const throw();
 		};
-
 		string		getName() const;
 		int			getGrade() const;
 		int			getGradeToExecute() const;
 		bool		getSign() const;
-		void		incrementGrade();
-		void		decrementGrade();
 		void		beSigned(Bureaucrat& Bureaucrat);
 };
 

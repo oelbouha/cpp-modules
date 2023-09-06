@@ -14,51 +14,33 @@
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other)
 {
-	std::cout << "PresidentialPardonForm copy constructor called" << endl;
 	*this = other;
 }
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& copy)
 {
-	std::cout << "PresidentialPardonForm copy assignment constructor called" << endl;
 	if (this != &copy)
 	{
-		
+		target = copy.target;
 	}
 	return (*this);
 }
 
-PresidentialPardonForm::PresidentialPardonForm()
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 145, 137)
 {
-	std::cout << "PresidentialPardonForm default constructor called" << endl;
+	target = "Default";
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "PresidentialPardonForm destructor called" << endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(string target)
+PresidentialPardonForm::PresidentialPardonForm(string target): AForm("PresidentialPardonForm", 145, 137)
 {
 	this->target = target;
 }
 
-void	PresidentialPardonForm::execute(Bureaucrat const& executor)
+void	PresidentialPardonForm::action() const
 {
-	int		grade;
-
-	grade = executor.getGrade();
-	cout << grade << endl;
-	if (this->getSign() == true && grade > 0 && grade < 150)
-	{
-		if (this->getGrade() == 25 && this->getGrdeToexecute() == 5)
-			cout << this->target << " has been pardoned by Zaphod Beeblebrox." << endl;
-	}
-	else
-	{
-		if (grade < 0)
-			throw Bureaucrat::GradeTooLowException();
-		else if (grade > 150)
-			throw Bureaucrat::GradeTooHighException();
-	}
+	cout << target << " has been pardoned by Zaphod Beeblebrox." << endl;
 }
