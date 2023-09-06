@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 12:50:07 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/09/05 00:51:17 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:02:06 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@ void	init()
 {
 	try
 	{
-		Form p1("FORM!", 10, 10);
+		Form form("FORM!", 10, 10);
 		Bureaucrat p("hakim", 1);
-		p1.beSigned(p);
-
-		cout << p1;
+		form.beSigned(p);
+		cout << form;
 		cout << endl;
-		p.signForm(p1);
+		p.signForm(form);
 	}
 	catch (std::exception& execption)
 	{

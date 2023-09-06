@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:24:33 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/09/06 11:35:47 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:05:35 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm&	operator=(const PresidentialPardonForm& original);
 		~PresidentialPardonForm();
 		
-		void	action() const;
+		void	ExecuteAction() const;
 };
 
 #endif

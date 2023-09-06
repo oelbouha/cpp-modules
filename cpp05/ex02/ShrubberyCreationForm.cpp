@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:30:55 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/09/06 11:36:44 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:06:04 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(string target): AForm("ShrubberyCre
 	this->target = target;
 }
 
-void	ShrubberyCreationForm::action() const
+void	ShrubberyCreationForm::ExecuteAction() const
 {
 	std::ofstream	file;
 

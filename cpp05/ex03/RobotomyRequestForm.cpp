@@ -14,59 +14,34 @@
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
 {
-	std::cout << "RobotomyRequestForm copy constructor called" << endl;
 	*this = other;
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& copy)
 {
-	std::cout << "RobotomyRequestForm copy assignment constructor called" << endl;
 	if (this != &copy)
 	{
-		// name = copy.name;
-		// grade = copy.grade;
+		target = copy.target;
 	}
 	return (*this);
 }
 
-RobotomyRequestForm::RobotomyRequestForm()
+RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", 72, 45)
 {
-	std::cout << "RobotomyRequestForm default constructor called" << endl;
+	target = "robot";
 }
 
-RobotomyRequestForm::~RobotomyRequestForm()
+RobotomyRequestForm::RobotomyRequestForm(string target): AForm("RobotomyRequestForm", 72, 45)
 {
-	std::cout << "RobotomyRequestForm destructor called" << endl;
+	this->target = target;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(string target)
+RobotomyRequestForm::~RobotomyRequestForm(){}
+
+void	RobotomyRequestForm::ExecuteAction() const
 {
-	if (this->getGrade() == 72 && this->getGrdeToexecute() == 45)
-	{
-		cout << target << " has been robotomized successfully 50% of the time." << endl;
-	}
+	if (time(NULL) % 2)
+		cout << this->target << " has been robotomized successfully 50% of the time. " << endl;
 	else
-		cout << "the robotomy failed." << endl;
-}
-
-void	RobotomyRequestForm::execute(Bureaucrat const& executor)
-{
-	int		grade;
-
-	grade = executor.getGrade();
-	cout << grade << endl;
-	if (this->getSign() == true && grade > 0 && grade < 150)
-	{
-		if (this->getGrade() == 25 && this->getGrdeToexecute() == 5)
-			cout << this->target << " has been robotomized successfully 50% of the time. " << endl;
-		else
-			cout << "robotomy failed." << endl;
-	}
-	else
-	{
-		if (grade < 0)
-			throw Bureaucrat::GradeTooLowException();
-		else if (grade > 150)
-			throw Bureaucrat::GradeTooHighException();
-	}
+		cout << "robotomy failed." << endl;
 }

@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 23:16:58 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/09/06 11:38:47 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:04:55 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ Bureaucrat::Bureaucrat()
 	grade = 0;
 }
 
-Bureaucrat::~Bureaucrat()
-{
-}
+Bureaucrat::~Bureaucrat(){}
 
 Bureaucrat::Bureaucrat(std::string name, int grade)
 {
@@ -85,7 +83,7 @@ void	Bureaucrat::signForm(AForm& form)
 		cout << name << " couldn’t sign " << form.getName() << "because he does not have enought grade" <<  std::endl;
 }
 
-void	Bureaucrat::executeForm(AForm const& form) const
+void	Bureaucrat::executeForm(AForm const& form)
 {
 	try
 	{

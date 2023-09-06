@@ -26,7 +26,7 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm&	operator=(const RobotomyRequestForm& original);
 		~RobotomyRequestForm();
 
-		void	action() const;
+		void	ExecuteAction() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:30:55 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/23 23:41:20 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:06:04 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,53 +14,50 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
 {
-	std::cout << "ShrubberyCreationForm copy constructor called" << endl;
 	*this = other;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& copy)
 {
-	std::cout << "ShrubberyCreationForm copy assignment constructor called" << endl;
 	if (this != &copy)
 	{
+		target = copy.target;
 	}
 	return (*this);
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm()
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm", 25, 5)
 {
-	std::cout << "ShrubberyCreationForm default constructor called" << endl;
+	target = "Shrubbery";
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm()
+ShrubberyCreationForm::~ShrubberyCreationForm(){}
+
+ShrubberyCreationForm::ShrubberyCreationForm(string target): AForm("ShrubberyCreationForm", 25, 5)
 {
-	std::cout << "ShrubberyCreationForm destructor called" << endl;
+	this->target = target;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(string target)
+void	ShrubberyCreationForm::ExecuteAction() const
 {
-	if (this->getGrade() == 145 && this->getGrdeToexecute() == 137)
-	{
-		cout << target << "create file \n";
-	}
-}
+	std::ofstream	file;
 
-void	ShrubberyCreationForm::execute(Bureaucrat const& executor)
-{
-	int		grade;
-
-	grade = executor.getGrade();
-	cout << grade << endl;
-	if (this->getSign() == true && grade > 0 && grade < 150)
+	file.open(target + "_shrubbery", std::ios::out);
+	if (!file.is_open())
 	{
-		if (this->getGrade() == 25 && this->getGrdeToexecute() == 5)
-			cout << this->target << " create a file" << endl;
+		cout << "couldn't open the file" << endl;
+		return ;
 	}
-	else
-	{
-		if (grade < 0)
-			throw Bureaucrat::GradeTooLowException();
-		else if (grade > 150)
-			throw Bureaucrat::GradeTooHighException();
-	}
+	file << "         #\n\
+        ###\n\
+       #####\n\
+      #######\n\
+     #########\n\
+    ###########\n\
+   #############\n\
+  ###############\n\
+ #################\n\
+         |\n\
+         |\n" << endl;
+	file.close();
 }

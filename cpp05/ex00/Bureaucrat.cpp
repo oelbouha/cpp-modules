@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 23:16:58 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/09/04 12:40:15 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/06 11:54:58 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy)
 Bureaucrat::Bureaucrat()
 {
 	cout << "Bureaucrat default constructor called" << endl;
-	name = "default";
+	name = "Beareaucrat";
 	grade = 0;
 }
 
@@ -83,10 +83,10 @@ void	Bureaucrat::decrementGrade()
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return  "grade too high\n";
+	return  "grade too high";
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return  "grade too low\n";
+	return  "grade too low";
 }

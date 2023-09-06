@@ -28,7 +28,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 145, 137)
 {
-	target = "Default";
+	target = "PresidentialPardonForm";
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
@@ -40,7 +40,7 @@ PresidentialPardonForm::PresidentialPardonForm(string target): AForm("Presidenti
 	this->target = target;
 }
 
-void	PresidentialPardonForm::action() const
+void	PresidentialPardonForm::ExecuteAction() const
 {
 	cout << target << " has been pardoned by Zaphod Beeblebrox." << endl;
 }

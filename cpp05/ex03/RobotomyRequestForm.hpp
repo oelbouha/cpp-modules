@@ -15,11 +15,6 @@
 
 #include "AForm.hpp"
 
-using std::cout;
-using std::endl;
-using std::string;
-
-
 class RobotomyRequestForm : public AForm
 {
 	private :
@@ -31,7 +26,7 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm&	operator=(const RobotomyRequestForm& original);
 		~RobotomyRequestForm();
 
-		void	execute(Bureaucrat const& executor);
+		void	ExecuteAction() const;
 };
 
 #endif

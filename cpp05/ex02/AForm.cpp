@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 23:16:58 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/09/06 11:35:10 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:32:37 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,6 @@ const char *AForm::GradeTooLowException::what() const throw()
 	return  "grade too low";
 }
 
-const char *AForm::FailedToExecute::what() const throw()
-{
-	return  "faile t execute the form";
-}
-
 AForm::AForm(const string name, const int grade, const int execute) : name(name), gradeToSign(grade), gradeToExecute(execute){
 }
 
@@ -58,7 +53,7 @@ bool	AForm::getSign() const
 	return sign;
 }
 
-int	AForm::getGrade() const
+int	AForm::getGradeToSign() const
 {
 	return gradeToSign;
 }
@@ -70,20 +65,19 @@ int	AForm::getGrdeToexecute() const
 
 void	AForm::beSigned(Bureaucrat& Bureaucrat)
 {
-	if (Bureaucrat.getGrade() > this->getGrade())
+	if (Bureaucrat.getGrade() > this->getGradeToSign())
 		throw AForm::GradeTooLowException();
 	sign = true;
 }
 
 void	AForm::execute(Bureaucrat const& executor) const
 {
-	if (this->getGrade() < executor.getGrade())
+	if (this->getGradeToSign() < executor.getGrade())
 		throw AForm::GradeTooLowException();
 	if (this->getSign() == false)
 	{
 		cout << executor.getName() << " couldn't execute the form because it hasn't sign the form" << endl;
 		throw AForm::GradeTooLowException();
 	}
-	this->action();
-	cout << executor.getName() << " executed " << this->getName() << endl;
+	this->ExecuteAction();
 }

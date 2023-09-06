@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:24:33 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/08/23 23:35:53 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:05:46 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 #define SHRUBBERYCREATIONFORM_HPP
 
 #include "AForm.hpp"
-
-using std::cout;
-using std::endl;
-using std::string;
-
 
 class ShrubberyCreationForm : public AForm
 {
@@ -31,7 +26,8 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm&	operator=(const ShrubberyCreationForm& original);
 		~ShrubberyCreationForm();
 
-		void	execute(Bureaucrat const& executor);
+		void	ExecuteAction() const;
 };
+
 
 #endif

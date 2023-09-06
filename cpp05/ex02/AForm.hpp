@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 14:41:33 by oelbouha          #+#    #+#             */
-/*   Updated: 2023/09/06 11:35:28 by oelbouha         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:31:52 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,14 @@ class	AForm
 			public :
 				const char* what() const throw();
 		};
-		class	FailedToExecute : public std::exception{
-			public :
-				const char* what() const throw();
-		};
 
 		string		getName() const;
-		int			getGrade() const;
+		int			getGradeToSign() const;
 		int			getGrdeToexecute() const;
 		bool		getSign() const;
 		void		beSigned(Bureaucrat& Bureaucrat);
 		void		execute(Bureaucrat const& executor) const;
-		virtual void		action() const = 0;
+		virtual void		ExecuteAction() const = 0;
 };
 
 #endif

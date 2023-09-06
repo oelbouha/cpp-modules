@@ -38,7 +38,7 @@ RobotomyRequestForm::RobotomyRequestForm(string target): AForm("RobotomyRequestF
 
 RobotomyRequestForm::~RobotomyRequestForm(){}
 
-void	RobotomyRequestForm::action() const
+void	RobotomyRequestForm::ExecuteAction() const
 {
 	if (time(NULL) % 2)
 		cout << this->target << " has been robotomized successfully 50% of the time. " << endl;
